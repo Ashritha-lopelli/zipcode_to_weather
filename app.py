@@ -3,10 +3,10 @@ import requests
 
 app = Flask(__name__)
 api_key = "e18ee1b6e5331e253852aa61412d618e"  # Replace with your OpenWeatherMap API key
-
-@app.route("/weather/<zip_code>")
-def get_weather(zip_code):
+@app.route("/weather/<city>")
+def get_weather(city):
     # Make a request to the OpenWeatherMap API
+    zip_code = f"http://localhost:5003/zipcodes/{city}/zipcode"
     url = f"http://api.openweathermap.org/data/2.5/forecast?zip={zip_code},us&appid={api_key}"
     response = requests.get(url)
 
