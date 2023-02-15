@@ -7,7 +7,7 @@ docker build -t restapi-image-2 .
 
 # for docker run
 
-docker run --name restapi-container-2 -p 5003:5003 restapi-image-2
+docker run --name restapi-container-2 -d -p 5004:5004 --network=weather-network restapi-image-2
 
 # All execution screenshots are attached below
 
